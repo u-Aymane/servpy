@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: servpy
+Version: 1.0.0
+Summary: ServPy is a Python library that allows you to bruteforce and find (ssh, ftp, windows) server in the internet by checking open ports
+Author: Aymane Elhattab
+Author-email: <aymane.elhattab.master@gmail.com>
+License: UNKNOWN
+Keywords: rdp,server,port-check,bruteforce
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+# ServPy
+
+ServPy is a Python library that allows you to bruteforce and find (ssh, ftp, windows) server in the internet by checking open ports
+
+## Installation
+
+Use the package manager [pip](https://pypi.org/project/servpy/) to install servpy.
+
+```bash
+pip install servpy
+```
+
+## Usage
+
+```python
+import threading
+from servpy import Server
+
+
+def main():
+    rdp = Server()
+    # print(f'Running.... {threading.current_thread()}')
+    rdp.run(verbose=False)
+
+
+def threads(thread: int):
+    thread_list = []
+    for _ in range(thread):
+        t = threading.Thread(target=main)
+        thread_list.append(t)
+        t.start()
+
+    for thread_ in thread_list:
+        thread_.join()
+
+
+if __name__ == '__main__':
+    threads(100)
+
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+

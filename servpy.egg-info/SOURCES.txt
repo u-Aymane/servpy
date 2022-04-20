@@ -1,0 +1,9 @@
+README.md
+setup.py
+servpy/__init__.py
+servpy/servpy.py
+servpy.egg-info/PKG-INFO
+servpy.egg-info/SOURCES.txt
+servpy.egg-info/dependency_links.txt
+servpy.egg-info/requires.txt
+servpy.egg-info/top_level.txt
